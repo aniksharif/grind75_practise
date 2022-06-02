@@ -1,0 +1,17 @@
+# Tried insetion sort
+class Solution(object):
+    def sortColors(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: None Do not return anything, modify nums in-place instead.
+        """
+        size = len(nums)
+        for step in range(size):
+            min_place = step
+            
+            for j in range(step+1,size):
+                if(nums[j]<nums[min_place]):
+                    min_place=j
+                    
+            (nums[step],nums[min_place])=(nums[min_place],nums[step])
+                    
