@@ -1,0 +1,15 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        seen={}
+        for index,val in enumerate(nums):
+            remaining = target - val
+            
+            if remaining in seen:
+                return [index,seen[remaining]]
+            
+            seen[val] = index
