@@ -1,0 +1,14 @@
+class Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        appear = {}
+        
+        for i,n in enumerate(nums):
+            if n not in appear:
+                appear[n] = 0
+            else:
+                appear[n]+=1
+        return max(appear, key=appear.get)
