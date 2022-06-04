@@ -1,0 +1,15 @@
+class Solution(object):
+    def findNumbers(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        n=len(nums)
+        count = 0
+        for i in range(n):
+            digit = len(str(nums[i]))
+            if(digit%2==0):
+                count+=1
+        return count
+            
+        
