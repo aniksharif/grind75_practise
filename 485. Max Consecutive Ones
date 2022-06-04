@@ -1,0 +1,18 @@
+class Solution(object):
+    def findMaxConsecutiveOnes(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        max_nums=0
+        n=len(nums)
+        count=0
+        
+        for i in range(n):
+            if nums[i]==1:
+                count+=1
+            if nums[i]==0 or i==n-1:
+                max_nums=max(max_nums,count)
+                count=0
+        return max_nums
+        
