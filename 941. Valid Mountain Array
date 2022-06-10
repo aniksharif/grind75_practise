@@ -1,0 +1,27 @@
+class Solution(object):
+    def validMountainArray(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: bool
+        """
+        n = len(arr)
+        
+        if n < 3:
+            return False
+        left = 0
+        
+        for i in range(n-1):
+            if arr[i]>=arr[i+1]:
+                left = i
+                break
+        right = 0
+        for i in range(n-1,0,-1):
+            if arr[i]>=arr[i-1]:
+                right = i
+                break
+        if left==right and left>0 and right+1< n:
+            return True
+
+        return False
+            
+        
