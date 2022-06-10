@@ -1,0 +1,19 @@
+class Solution(object):
+    def checkIfExist(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: bool
+        """
+        n= len(arr)
+        j=0
+        checked={}
+        ans = False
+        
+        for i in range(n):
+            if arr[i]*2 in checked or not arr[i]%2 and arr[i]/2 in checked :
+                ans = True
+            checked[arr[i]] = arr[i]*2
+            
+        return ans
+            
+        
